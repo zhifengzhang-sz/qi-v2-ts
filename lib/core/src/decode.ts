@@ -1,4 +1,4 @@
-// decode: the one way in for outside input (dev/ts/STYLE.md, Decode at the boundary). The schema is the
+// decode: the one way in for outside input (STYLE.md, Decode at the boundary). The schema is the
 // caller's; core knows none. A failure is a DecodeError, of category VALIDATION, whose context lists every issue.
 
 import { type Exception, error, type Json, pipe, type QiError, type Result, result } from "@qi/base";
@@ -47,7 +47,7 @@ export const decode =
       ),
     );
 
-// The schema written out for other languages (dev/docs/lib.md, Contracts). z.toJSONSchema throws on what JSON Schema
+// The schema written out for other languages (README.md, Contracts). z.toJSONSchema throws on what JSON Schema
 // cannot say (a date, a bigint, a transform), so it enters here as a value, the schema's fault (SYSTEM); what it
 // returns is JSON by construction. A schema with defaults differs by side: what it takes (input: a field with a
 // default may be left out) and what it gives (output: the field always there).

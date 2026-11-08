@@ -10,6 +10,7 @@ install`. The shell gives every tool the targets call (`flake.nix`).
 | Kind | Where | In git | Made by |
 |---|---|---|---|
 | the work | `lib/` (the libraries) | yes | the sessions |
+| the product, `qi-v2-ts` | `flake.nix`'s package, `README.md` (with its Changes), `LICENSE`; its taker's check, `dev/taker/` | yes | the sessions, a release by its tag |
 | the TypeScript's workspace | `package.json`, `bun.lock`, `tsconfig.json`, `vitest.config.ts`, `biome.json`, `biome/` | yes | the sessions |
 | what it owns, gives and takes | `PRODUCTS.md` | yes | the sessions, in the commit of the change it describes |
 | the project's machinery | `flake.nix`, `flake.lock`, `Makefile`, `dev/hooks/`, `dev/no-credential/`, `.envrc` | yes | the sessions |
@@ -38,6 +39,6 @@ install`. The shell gives every tool the targets call (`flake.nix`).
    owner with what updates it, none updated without the owner's say; where it stops for a credential (GitHub's
    compare, through gh's login), the owner is asked.
 2. **Work.** The opening's one task. Before the first build of the session, the owner is asked. Checks run in the
-   role `checker` (`make ts`, `products-check`, `agents-check`, `verify`). No fallbacks.
+   role `checker` (`make ts`, `taker-check`, `products-check`, `agents-check`, `verify`). No fallbacks.
 3. **End.** `docs/opening.md` rewritten for the next session, `docs/milestones.md` brought up to date; committed by
    explicit paths after the checks pass, and pushed.

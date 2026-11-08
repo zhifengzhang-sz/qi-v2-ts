@@ -1,4 +1,4 @@
-// base: Result, Task, QiError, pipe and flow (dev/ts/STYLE.md; dev/docs/lib.md). The modules are
+// base: Result, Task, QiError, pipe and flow (STYLE.md; README.md, @qi/base). The modules are
 // namespaces, result.map beside task.map; the types are named apart.
 
 export type { Category, Context, Defect, Exception, Json, QiError } from "./error.ts";

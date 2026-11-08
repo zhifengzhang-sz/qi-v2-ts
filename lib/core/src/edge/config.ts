@@ -1,5 +1,5 @@
 // config, the effect: a settings file read and decoded, as one Task. Here, not in ../config.ts, so that the pure
-// part imports no effect (dev/ts/STYLE.md, The structure).
+// part imports no effect (STYLE.md, The structure).
 
 import { error, pipe, type Task, task } from "@qi/base";
 import type { z } from "zod";

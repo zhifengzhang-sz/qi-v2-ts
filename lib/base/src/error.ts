@@ -1,7 +1,7 @@
-// Errors as data (dev/ts/STYLE.md): base gives the shape of an error and nothing of its uses; each module defines
-// its own error type, a QiError narrowed to its codes (the owner, 2026-10-15: "the base one is kind of like the
-// abstract class. each user should have its own error"). The context is Json, so that writing an error out as JSON
-// is total (a number NaN or ±Infinity is written as null, JSON's own rule).
+// Errors as data (STYLE.md): base gives the shape of an error and nothing of its uses; each module defines
+// its own error type, a QiError narrowed to its codes, as each user of an abstract class has its own
+// (docs/decisions.md). The context is Json, so that writing an error out as JSON is total (a number NaN or
+// ±Infinity is written as null, JSON's own rule).
 
 import { describe } from "./edge/catch.ts";
 

@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Result, Task, QiError, pipe and flow, curried (dev/ts/STYLE.md)",
+  "description": "Result, Task, QiError, pipe and flow, curried (STYLE.md; README.md)",
+  "license": "MIT",
   "exports": {
     ".": "./src/index.ts"
   }

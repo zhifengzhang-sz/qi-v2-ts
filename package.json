@@ -7,7 +7,7 @@
   ],
   "scripts": {
     "gen": "bun lib/base/scripts/gen-pipe.ts",
-    "check": "biome check lib biome/verify.ts package.json tsconfig.json biome.json vitest.config.ts",
+    "check": "biome check lib biome/verify.ts dev/taker package.json tsconfig.json biome.json vitest.config.ts",
     "typecheck": "tsc --noEmit -p .",
     "test": "vitest run",
     "verify-style": "bun biome/verify.ts"

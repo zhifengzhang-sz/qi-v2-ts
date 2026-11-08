@@ -1,5 +1,5 @@
 /// <reference types="node" />
-// Reading a file: an effect, so a Task (dev/ts/STYLE.md, Effects at the edge). node:fs, which Bun and Node both
+// Reading a file: an effect, so a Task (STYLE.md, Effects at the edge). node:fs, which Bun and Node both
 // give, so the tests run under either.
 
 import { readFile } from "node:fs/promises";

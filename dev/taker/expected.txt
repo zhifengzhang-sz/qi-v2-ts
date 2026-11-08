@@ -1,0 +1,6 @@
+run: success "taker"
+log: {"level":"info","time":"2026-01-01T00:00:00.000Z","message":"loaded","context":{"name":"taker"}}
+decode: failure DECODE VALIDATION
+contract: success "log level"
+load: failure FILE_READ SYSTEM ENOENT
+error: [X] m

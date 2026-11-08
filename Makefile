@@ -12,7 +12,7 @@ endif
 PY := python3
 AGENT_KIND ?= all
 
-.PHONY: help install agents agents-check run-start run-check verify locks-check products-check ts
+.PHONY: help install agents agents-check run-start run-check verify locks-check products-check ts taker-check
 
 help: ## the targets
 	@grep -E '^[a-z-]+:.*##' $(MAKEFILE_LIST) | sed 's/:.*## /\t/' | expand -t 22
@@ -50,6 +50,7 @@ verify: ## the checks a commit requires, every one; the pre-commit hook runs it
 	$(MAKE) --no-print-directory products-check
 	$(MAKE) --no-print-directory agents-check
 	$(MAKE) --no-print-directory ts
+	$(MAKE) --no-print-directory taker-check
 
 # kit locks asks each input's source over HTTPS; for a folder input whose repository moved it asks GitHub's compare
 # through gh, and where HTTPS fails it asks again by SSH. Both would act with a credential of the owner's, so it runs
@@ -72,3 +73,8 @@ products-check: ## whether PRODUCTS.md states what the project has (the kit's ki
 ts: ## the TypeScript of lib/: its packages installed by bun at bun.lock's versions (a package.json that disagrees with bun.lock stops it), base's pipe and flow generated, then Biome (lint, format, the style's plugins and their proof), the types, the tests
 	bun install --frozen-lockfile
 	bun run gen && bun run check && bun run verify-style && bun run typecheck && bun run test
+
+# ---------------------------------------------------------------- the product, qi-v2-ts (README.md)
+
+taker-check: ## the product as a taker takes it (README.md, Taking it): the flake package built, a taker's script (dev/taker/) linked to it outside this workspace, typechecked by tsc and run by Bun and by Node, its lines against dev/taker/expected.txt; after make ts
+	bash dev/taker/check.sh

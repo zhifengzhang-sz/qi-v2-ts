@@ -1,5 +1,5 @@
 // The boundaries where an exception enters as a value: tryCatch (onThrow: error.fromUnknown() for a QiError) and
-// describe, a string for any thrown value. The packages' only try is here, in the edge (dev/ts/STYLE.md).
+// describe, a string for any thrown value. The packages' only try is here, in the edge (STYLE.md).
 
 import type { Result } from "../result.ts";
 

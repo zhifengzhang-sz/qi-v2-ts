@@ -1,4 +1,4 @@
-// decode against Zod's own safeParse, its failure as Json, and the JSON Schema written out (dev/ts/STYLE.md).
+// decode against Zod's own safeParse, its failure as Json, and the JSON Schema written out (STYLE.md).
 
 import fc from "fast-check";
 import { describe, expect, it } from "vitest";

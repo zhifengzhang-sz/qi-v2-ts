@@ -1,5 +1,5 @@
-// core: decode (the contracts' way in), contract, config and log, over @qi/base (dev/ts/STYLE.md;
-// dev/docs/lib.md, base and core). The schemas are the caller's; core knows none.
+// core: decode (the contracts' way in), contract, config and log, over @qi/base (STYLE.md; README.md,
+// @qi/core). The schemas are the caller's; core knows none.
 
 import * as pureConfig from "./config.ts";
 

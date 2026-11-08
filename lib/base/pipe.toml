@@ -1,4 +1,4 @@
-# The longest chain pipe and flow take (the owner, 2026-10-15: "they are config params to me"). TypeScript checks
-# a chain only through one signature per length, so src/pipe.ts is generated up to it by scripts/gen-pipe.ts,
-# which make ts runs before the type check.
+# The longest chain pipe and flow take: a setting, not a constant of the code (docs/decisions.md). TypeScript
+# checks a chain only through one signature per length, so src/pipe.ts is generated up to it by
+# scripts/gen-pipe.ts, which make ts runs before the type check.
 max = 20

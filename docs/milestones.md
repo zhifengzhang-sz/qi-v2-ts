@@ -6,5 +6,7 @@
 Bun or TypeScript, its README and Changes, its row in `PRODUCTS.md`, released by tag `<product>-<version>`, so that a
 taker pins the tag over HTTPS with no login.
 
-**Stands.** The libraries in `lib/` at 0.1.0; the workspace, the style's checks and `make ts`; the project's
-machinery (the flake, the kit, the agents' rules, `PRODUCTS.md` with no product yet). Not yet released.
+**Stands.** Done: the product `qi-v2-ts` 0.1.0, the tag `qi-v2-ts-0.1.0`. The libraries are in `lib/` at 0.1.0, their
+comments pointing to `STYLE.md`, `README.md` and `docs/decisions.md`. The flake package is `qi-v2-ts`, its README and
+Changes are `README.md`, and `make taker-check` (run by `make verify`) checks a taker's script against the package
+alone. Licence MIT.

@@ -1,4 +1,4 @@
-// Task, an effect as a value (dev/ts/STYLE.md): a computation not yet run that gives a Result. An effect's own
+// Task, an effect as a value (STYLE.md): a computation not yet run that gives a Result. An effect's own
 // failure is a value (tryPromise); a throw in a function given to map, flatMap or orElse is a defect, which run
 // turns into a QiError of code DEFECT, so run never rejects. Tasks compose before anything runs; run runs one,
 // once, at the program's edge. The function inside is kept under a key this module does not export, so run is the

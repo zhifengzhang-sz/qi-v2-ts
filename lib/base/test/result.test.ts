@@ -1,4 +1,4 @@
-// The laws of Result as properties: its specification (dev/ts/STYLE.md, The laws).
+// The laws of Result as properties: its specification (STYLE.md, The laws).
 
 import fc from "fast-check";
 import { describe, expect, it } from "vitest";

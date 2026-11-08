@@ -1,4 +1,4 @@
-// The laws of Task, by running both sides (dev/ts/STYLE.md, The laws), and its boundary.
+// The laws of Task, by running both sides (STYLE.md, The laws), and its boundary.
 
 import fc from "fast-check";
 import { describe, expect, it } from "vitest";
@@ -166,7 +166,7 @@ describe("tap", () => {
 describe("only run starts a Task", () => {
   it("a Task is not a function", () => {
     const t = task.of(1);
-    // @ts-expect-error: a Task cannot be called by hand (dev/ts/STYLE.md, The API)
+    // @ts-expect-error: a Task cannot be called by hand (STYLE.md, The API)
     expect(() => t()).toThrow(TypeError);
   });
 });

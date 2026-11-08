@@ -1,5 +1,5 @@
-// Result, the Either type (dev/ts/STYLE.md): a failure is a value. Every operation is curried and data-last,
-// for pipe and flow; the only way out is match. Its laws (functor, monad) are its tests.
+// Result, the Either type (STYLE.md): a failure is a value. Every operation is curried and data-last,
+// for pipe and flow; the ways out are match and getOrElse, both total. Its laws (functor, monad) are its tests.
 
 import type { QiError } from "./error.ts";
 
@@ -57,7 +57,7 @@ export const fromNullable =
   <T>(value: T | null | undefined): Result<NonNullable<T>, E> =>
     value === null || value === undefined ? failure(onNull()) : success(value);
 
-// The boundary where a throwing function enters as a value: in src/edge/, the one try (dev/ts/STYLE.md).
+// The boundary where a throwing function enters as a value: in src/edge/, the one try (STYLE.md).
 export { tryCatch } from "./edge/catch.ts";
 
 // All successes, or the first failure in order.

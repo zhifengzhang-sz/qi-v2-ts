@@ -18,7 +18,7 @@ export type Entry = {
   readonly context: Context;
 };
 
-// A line is what log writes out, so it has a schema, for a reader in another language (dev/docs/lib.md, Contracts).
+// A line is what log writes out, so it has a schema, for a reader in another language (README.md, Contracts).
 export const entrySchema: z.ZodType<Entry> = z
   .object({
     level: levelSchema,

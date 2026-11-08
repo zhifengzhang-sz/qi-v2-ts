@@ -1,4 +1,4 @@
-// config, the pure part: a settings file's text against the app's schema (dev/docs/lib.md, base and core).
+// config, the pure part: a settings file's text against the app's schema (README.md, @qi/core).
 // Parse the TOML, then decode; the first failure stops the rest. Reading the file is the edge's
 // (src/edge/config.ts). No builder and no unsafe way out.
 

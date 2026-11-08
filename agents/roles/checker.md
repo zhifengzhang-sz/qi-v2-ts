@@ -1,6 +1,6 @@
 ---
 name: checker
-for: "runs the project's checks (the make targets the brief names: ts, agents-check, products-check, locks-check, verify, ...) and reports PASS or FAIL for each with the exact lines; after any change to lib/, the workspace's files, flake.lock, PRODUCTS.md or agents/, and before a commit"
+for: "runs the project's checks (the make targets the brief names: ts, taker-check, agents-check, products-check, locks-check, verify, ...) and reports PASS or FAIL for each with the exact lines; after any change to lib/, the workspace's files, flake.lock, PRODUCTS.md or agents/, and before a commit"
 model: small
 effort: low
 can: [read, search, execute]

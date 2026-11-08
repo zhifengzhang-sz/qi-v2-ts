@@ -1,4 +1,4 @@
-// A module's contract (dev/docs/lib.md, Contracts): its schema and the test vectors beside it, values the
+// A module's contract (README.md, Contracts): its schema and the test vectors beside it, values the
 // schema must accept and values it must reject. The vectors are Json so that another language can run them too.
 
 import { type Json, type QiError, type Result, result } from "@qi/base";
