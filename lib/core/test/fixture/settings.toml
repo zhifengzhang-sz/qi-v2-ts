@@ -1,0 +1,5 @@
+# A settings file as an app would write it (test/config.test.ts).
+ledger = "ledger"
+
+[log]
+level = "warn"

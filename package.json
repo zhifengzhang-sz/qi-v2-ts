@@ -1,0 +1,21 @@
+{
+  "name": "qi-v2-ts",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "lib/*"
+  ],
+  "scripts": {
+    "gen": "bun lib/base/scripts/gen-pipe.ts",
+    "check": "biome check lib biome/verify.ts package.json tsconfig.json biome.json vitest.config.ts",
+    "typecheck": "tsc --noEmit -p .",
+    "test": "vitest run",
+    "verify-style": "bun biome/verify.ts"
+  },
+  "devDependencies": {
+    "@types/node": "24.3.0",
+    "fast-check": "4.3.0",
+    "typescript": "5.9.3",
+    "vitest": "3.2.4"
+  }
+}

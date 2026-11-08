@@ -1,0 +1,15 @@
+{
+  "name": "@qi/core",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "decode, contract, config and log over @qi/base: the library's way in for outside input (dev/ts/STYLE.md; dev/docs/lib.md)",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@qi/base": "workspace:*",
+    "smol-toml": "1.4.2",
+    "zod": "4.1.12"
+  }
+}

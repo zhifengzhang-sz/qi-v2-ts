@@ -1,0 +1,10 @@
+{
+  "name": "@qi/base",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Result, Task, QiError, pipe and flow, curried (dev/ts/STYLE.md)",
+  "exports": {
+    ".": "./src/index.ts"
+  }
+}
