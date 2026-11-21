@@ -22,14 +22,15 @@ its types) and checked by the taker's `tsc`. Its layout:
 | `node_modules/@types/node`, `node_modules/undici-types` | Node's types, which the edge's files name for `tsc` |
 | `README.md`, `STYLE.md`, `LICENSE` | this file, the rule, the licence |
 
-Each release is a tag `qi-v2-ts-<version>` (Changes, below), read over HTTPS with no login.
+Each release is a tag `qi-v2-ts-<version>` (Changes, below), and its release branch, `release/qi-v2-ts`, is then
+moved to it; both are read over HTTPS with no login.
 
 ## Taking it
 
-The tag, as an input of the taker's flake:
+The release branch, as an input of the taker's flake, so that each release comes by `nix flake update`:
 
 ```nix
-inputs.qi-v2-ts.url = "github:zhifengzhang-sz/qi-v2-ts?ref=qi-v2-ts-0.1.0";
+inputs.qi-v2-ts.url = "github:zhifengzhang-sz/qi-v2-ts?ref=release/qi-v2-ts";
 ```
 
 The package, at the taker's own pin (`--inputs-from .`), linked into the taker's `node_modules`:

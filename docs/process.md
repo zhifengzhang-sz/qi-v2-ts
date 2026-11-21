@@ -10,14 +10,14 @@ install`. The shell gives every tool the targets call (`flake.nix`).
 | Kind | Where | In git | Made by |
 |---|---|---|---|
 | the work | `lib/` (the libraries) | yes | the sessions |
-| the product, `qi-v2-ts` | `flake.nix`'s package, `README.md` (with its Changes), `LICENSE`; its taker's check, `dev/taker/` | yes | the sessions, a release by its tag |
+| the product, `qi-v2-ts` | `flake.nix`'s package, `README.md` (with its Changes), `LICENSE`; its taker's check, `dev/taker/` | yes | the sessions, a release by its tag and its release branch |
 | the TypeScript's workspace | `package.json`, `bun.lock`, `tsconfig.json`, `vitest.config.ts`, `biome.json`, `biome/` | yes | the sessions |
 | what it owns, gives and takes | `PRODUCTS.md` | yes | the sessions, in the commit of the change it describes |
-| the project's machinery | `flake.nix`, `flake.lock`, `Makefile`, `dev/hooks/`, `dev/no-credential/`, `.envrc` | yes | the sessions |
-| the state of the work | `docs/opening.md`, `docs/milestones.md`, `docs/decisions.md`, `docs/designs/` (none yet) | yes | each session, at its end |
+| the project's machinery | `flake.nix`, `flake.lock`, `Makefile` (the kit's part and the project's), `dev/scripts/verify.sh` (`make verify`'s own part), `dev/no-credential/`, `.envrc` | yes | the sessions |
+| the state of the work | `docs/opening.md`, `docs/milestones.md`, `docs/decisions.md`, `docs/designs/` | yes | each session, at its end |
 | the rules for agents, their source | `agents/` | yes | the sessions, the owner approving |
 | the rules for agents, generated | `AGENTS.md`, `CLAUDE.md`, `.claude/agents/`, `.claude/workflows/`, `.github/agents/`, `.github/hooks/kit.json`, `agents.generated`; a run's record, `agents.run/`; the developer's own `agents.local.json` | no | `make agents` and `make run-start`, by the kit |
-| the tools, the kit | `/nix/store`, pinned by `flake.lock`; `dev/agents` | the pins | `nix develop`, `make install` |
+| the tools, the kit | `/nix/store`, pinned by `flake.lock`; `dev/agents`; git's pre-commit hook, which runs `make verify` | the pins | `nix develop`, `make install` |
 | build output and reports | `node_modules/`, `lib/*/node_modules/`, `.reports/` | no | the targets |
 | the owner's notes | `todo.md` | no | the owner |
 
@@ -39,6 +39,7 @@ install`. The shell gives every tool the targets call (`flake.nix`).
    owner with what updates it, none updated without the owner's say; where it stops for a credential (GitHub's
    compare, through gh's login), the owner is asked.
 2. **Work.** The opening's one task. Before the first build of the session, the owner is asked. Checks run in the
-   role `checker` (`make ts`, `taker-check`, `products-check`, `agents-check`, `verify`). No fallbacks.
+   role `checker` (`make ts`, `taker-check`, `products-check`, `agents-check`; `verify` once what is to be committed
+   is staged, as it checks what is staged). No fallbacks.
 3. **End.** `docs/opening.md` rewritten for the next session, `docs/milestones.md` brought up to date; committed by
    explicit paths after the checks pass, and pushed.

@@ -22,7 +22,7 @@ Read the others only when the task touches them: `STYLE.md` before writing code;
 
 ## Every role
 
-- **Public.** The project is public: it takes nothing that cannot be read with no login, and names no private project in any file.
+- **Public.** The project is public: it takes nothing that cannot be read with no login.
 - **A library is a library.** `@qi/base` and `@qi/core` are general: they know no domain and no taker, and take their input as plain data through their contracts.
 - **Code** follows `STYLE.md`; Biome formats it before a check.
 - **The project's secrets**: none.

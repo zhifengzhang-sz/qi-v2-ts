@@ -55,6 +55,27 @@ decision, why, and the documents it shapes. A decision still open is under Open,
   name: `Copyright (c) 2026 zhifengzhang-sz`. Why: it is the name every commit and the tag of the project carry; the
   line is in the package (`flake.nix` copies `LICENSE` into it), so a change waits for a release, and the owner may
   make it then. Shapes: `LICENSE`.
+- **2026-11-21, the owner.** The project's files follow the kit's shared rules (kit 0.7.0) and `practices.md`
+  section 8: `qi-v2` and the kit are taken by their release branches, `release/qi-v2` and `release/kit`; the kit's
+  part of the `Makefile` and of `.gitignore` is as section 8 gives it; the project's own pre-commit hook
+  (`dev/hooks/`, by `core.hooksPath`) gives way to the one `make install` writes, and what it checked (the work tree
+  what is staged, then every check) is `make verify`'s own part, `dev/scripts/verify.sh`; `agents/rules.md` drops
+  what the shared rules now say (no private project named). Why: a release of either input then comes by `nix flake
+  update`, and `kit locks` asks a release branch by its tags with no compare, so no gh; the kit's part is the same in
+  every project. Shapes: `flake.nix`, `Makefile`, `.gitignore`, `dev/scripts/verify.sh`, `agents/rules.md`,
+  `docs/process.md`.
+- **2026-11-21, the owner.** A taker takes `qi-v2-ts` by its release branch, `release/qi-v2-ts`, as the shared rules
+  say (kit 0.6.0 on), not by its tag, as the decision of 2026-11-08 above had it (every taker pins the tag); a release
+  is its tag `qi-v2-ts-<version>`, and its release branch is then moved to it. The branch starts at
+  `qi-v2-ts-0.1.0`'s commit (`3c55f72`), pushed by the owner; `README.md`'s Taking it says the branch in the same
+  change, its 0.1.0 entry under Changes left as it is; `PRODUCTS.md`'s Release as `qi-v2-nix`'s (tag
+  `qi-v2-ts-<version>`, branch `release/qi-v2-ts`). Why: the shared rule stands; each release then comes to a taker by
+  `nix flake update`, and `kit locks` asks a release branch by its tags with no compare. Shapes: `README.md`,
+  `docs/milestones.md`, `PRODUCTS.md`, `docs/process.md`.
+- **2026-11-21, the owner.** `docs/designs/` holds the documents a later session relies on, its `README.md` saying
+  so. Why: the shared rules send such a document there. Shapes: `docs/designs/README.md`, `docs/process.md`.
+- **2026-11-21, the owner.** `python3` leaves the shell's packages. Why: nothing in the project or the kit uses it.
+  Shapes: `flake.nix`.
 
 ## Open
 

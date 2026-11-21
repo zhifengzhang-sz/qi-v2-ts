@@ -1,13 +1,13 @@
 # qi-v2-ts's tools and products, the same on every machine (docs/process.md): `nix develop`, then `make install` and
 # the targets of the Makefile. Everything from outside is an input pinned by flake.lock: qi-v2's one nixpkgs and its
-# pure shell; the kit, which writes the agents' files from agents/. The product, qi-v2-ts (README.md), is the
-# package of the same name.
+# pure shell; the kit, which writes the agents' files from agents/; each by its release branch, so that a release of
+# either comes by nix flake update. The product, qi-v2-ts (README.md), is the package of the same name.
 {
   description = "qi-v2-ts: @qi/base and @qi/core, the TypeScript foundation libraries";
 
-  inputs.qi-v2.url = "github:zhifengzhang-sz/qi-v2-nix?dir=qi-v2";
+  inputs.qi-v2.url = "github:zhifengzhang-sz/qi-v2-nix?dir=qi-v2&ref=release/qi-v2";
   inputs.nixpkgs.follows = "qi-v2/nixpkgs";
-  inputs.kit.url = "github:zhifengzhang-sz/qi-v2-nix?dir=kit";
+  inputs.kit.url = "github:zhifengzhang-sz/qi-v2-nix?dir=kit&ref=release/kit";
   inputs.kit.inputs.qi-v2.follows = "qi-v2";
 
   outputs = { self, nixpkgs, qi-v2, kit }:
@@ -79,7 +79,7 @@
           shell = extra: qi-v2.lib.mkPureShell pkgs {
             name = "qi-v2-ts";
             packages = with pkgs; [
-              gnumake git gh curl openssh python3
+              gnumake git gh curl openssh
               # the TypeScript (STYLE.md): Bun runs it, Biome lints and formats it; its packages are npm's, pinned
               # by bun.lock; vitest's runtime is Node
               bun biome nodejs_24

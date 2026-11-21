@@ -1,6 +1,5 @@
-# the TypeScript's packages and what the targets write
+# the TypeScript's packages
 node_modules/
-.reports/
 # direnv: nix-direnv's cache, and each author's own choice of shell
 .direnv/
 .envrc.local
@@ -8,14 +7,15 @@ node_modules/
 .claude/settings.local.json
 # the owner's local file
 todo.md
-# the kit, linked by make install, and what it writes from agents/ (make agents): built output, never edited
+# the kit's: its link, the files make agents generates, a developer's own choices, a role's run in progress
 /dev/agents
-/agents.generated
-/agents.local.json
-/agents.run/
 /AGENTS.md
 /CLAUDE.md
 /.claude/agents/
 /.claude/workflows/
 /.github/agents/
 /.github/hooks/kit.json
+/agents.generated
+/agents.local.json
+/agents.run/
+/.reports/
